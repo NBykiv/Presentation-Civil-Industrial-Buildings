@@ -1,0 +1,637 @@
+/* ===== ОСНОВНІ СТИЛІ ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+}
+
+/* ===== КОНТЕЙНЕР ПРЕЗЕНТАЦІЇ ===== */
+.presentation {
+    position: relative;
+    width: 90%;
+    max-width: 1000px;
+    height: 600px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+/* ===== СЛАЙДИ ===== */
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.slide.active {
+    opacity: 1;
+    z-index: 10;
+}
+
+.slide-content {
+    width: 100%;
+    height: 100%;
+    padding: 60px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow-y: auto;
+}
+
+/* ===== ЗАГОЛОВКИ ===== */
+.slide h1 {
+    font-size: 3.5em;
+    color: #667eea;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.slide h2 {
+    font-size: 2.5em;
+    color: #667eea;
+    margin-bottom: 40px;
+    border-bottom: 3px solid #667eea;
+    padding-bottom: 15px;
+    text-align: center;
+}
+
+.slide h3 {
+    font-size: 1.3em;
+    color: #764ba2;
+    margin-bottom: 15px;
+}
+
+.slide h4 {
+    font-size: 1.1em;
+    color: #667eea;
+    margin-bottom: 10px;
+}
+
+/* ===== ТИТУЛЬНА СТОРІНКА ===== */
+.slide-footer {
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+    text-align: center;
+    color: #777;
+    font-size: 0.9em;
+}
+
+.subtitle {
+    font-size: 1.5em;
+    color: #764ba2;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* ===== БЛОКИ ВМІСТУ ===== */
+.content-block {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #f8f9ff;
+    border-left: 4px solid #667eea;
+    border-radius: 5px;
+}
+
+.content-block.highlight {
+    background-color: #fffacd;
+    border-left-color: #ffc107;
+}
+
+.content-block ul {
+    list-style: none;
+    padding-left: 20px;
+}
+
+.content-block li {
+    margin-bottom: 10px;
+    padding-left: 25px;
+    position: relative;
+}
+
+.content-block li:before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #667eea;
+    font-weight: bold;
+}
+
+/* ===== ПОРІВНЯЛЬНІ БЛОКИ ===== */
+.comparison-block {
+    display: flex;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.comparison-item {
+    flex: 1;
+    padding: 20px;
+    background-color: #f0f4ff;
+    border-radius: 8px;
+    border: 2px solid #667eea;
+    transition: transform 0.3s ease;
+}
+
+.comparison-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
+
+.comparison-item h3 {
+    color: #667eea;
+    font-size: 1.4em;
+    margin-bottom: 15px;
+}
+
+.examples {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 2px solid #667eea;
+    font-size: 0.9em;
+}
+
+.examples strong {
+    color: #764ba2;
+}
+
+.examples ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.examples li {
+    margin-bottom: 5px;
+}
+
+/* ===== ДВОКОЛОННІ МАКЕТИ ===== */
+.two-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 25px;
+}
+
+.two-column ul {
+    list-style: none;
+}
+
+.list-styled {
+    padding-left: 0 !important;
+}
+
+.list-styled li {
+    margin-bottom: 15px;
+    padding-left: 30px;
+    position: relative;
+    line-height: 1.5;
+}
+
+.list-styled li:before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: #667eea;
+    font-size: 1.2em;
+}
+
+/* ===== СІТКА КЛАСИФІКАЦІЇ ===== */
+.classification-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 25px;
+}
+
+.classification-item {
+    padding: 20px;
+    background: linear-gradient(135deg, #667eea15, #764ba215);
+    border-left: 5px solid #667eea;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.classification-item h4 {
+    font-size: 1.4em;
+    color: #667eea;
+    margin-bottom: 10px;
+}
+
+.classification-item p {
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+.classification-item p:first-of-type {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #764ba2;
+}
+
+/* ===== КЛАСИФІКАЦІЯ ВОГНЕСТІЙКОСТІ ===== */
+.flame-class {
+    margin-top: 15px;
+}
+
+.flame-class p {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}
+
+.badge-a, .badge-b, .badge-c, .badge-d, .badge-e {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    font-weight: bold;
+    color: white;
+    margin-right: 15px;
+    font-size: 0.9em;
+}
+
+.badge-a {
+    background-color: #4caf50;
+}
+
+.badge-b {
+    background-color: #8bc34a;
+}
+
+.badge-c {
+    background-color: #ff9800;
+}
+
+.badge-d {
+    background-color: #f44336;
+}
+
+.badge-e {
+    background-color: #9c27b0;
+}
+
+/* ===== ВИМОГИ ===== */
+.requirements-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 25px;
+}
+
+.requirement-item {
+    padding: 20px;
+    background-color: #f5f7fa;
+    border-radius: 8px;
+    border-left: 4px solid #667eea;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.requirement-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.2);
+}
+
+.requirement-item h4 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #667eea;
+}
+
+.requirement-item p {
+    font-size: 0.9em;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* ===== ТЕХНІЧНІ ВИМОГИ ===== */
+.tech-requirements {
+    margin-top: 25px;
+}
+
+.req-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.req-col {
+    padding: 20px;
+    background-color: #f0f4ff;
+    border-radius: 8px;
+    border-left: 4px solid #667eea;
+}
+
+.req-col h4 {
+    color: #667eea;
+    margin-bottom: 10px;
+}
+
+.req-col p {
+    font-size: 0.95em;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* ===== НОРМАТИВНА БАЗА ===== */
+.normative-block {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 25px;
+}
+
+.norm-item {
+    padding: 20px;
+    background: linear-gradient(135deg, #667eea15, #764ba215);
+    border-radius: 8px;
+    border: 2px solid #667eea;
+}
+
+.norm-item h3 {
+    color: #667eea;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.norm-item p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.example {
+    font-size: 0.85em;
+    color: #764ba2;
+    font-style: italic;
+    padding: 10px;
+    background-color: #fffacd;
+    border-radius: 3px;
+}
+
+/* ===== ВИСНОВКИ ===== */
+.conclusions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 25px;
+}
+
+.conclusion-item {
+    padding: 20px;
+    background-color: #e8f5e9;
+    border-left: 5px solid #4caf50;
+    border-radius: 5px;
+}
+
+.conclusion-item h3 {
+    color: #2e7d32;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.conclusion-item p {
+    color: #555;
+    line-height: 1.6;
+}
+
+/* ===== ДЖЕРЕЛА ===== */
+.sources {
+    margin-top: 20px;
+}
+
+.sources h3 {
+    color: #667eea;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+
+.sources ul {
+    list-style: none;
+    padding-left: 20px;
+}
+
+.sources li {
+    margin-bottom: 10px;
+    padding-left: 25px;
+    position: relative;
+    line-height: 1.5;
+}
+
+.sources li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #4caf50;
+    font-weight: bold;
+}
+
+.highlight-box {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #fff9e6;
+    border-left: 4px solid #ffc107;
+    border-radius: 5px;
+}
+
+.highlight-box p {
+    color: #f57f17;
+    font-weight: 500;
+}
+
+/* ===== НАВІГАЦІЙНІ КНОПКИ ===== */
+.controls {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+}
+
+.nav-btn {
+    padding: 10px 25px;
+    font-size: 1em;
+    font-weight: 600;
+    color: white;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 10px rgba(102, 126, 234, 0.3);
+}
+
+.nav-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.5);
+}
+
+.nav-btn:active {
+    transform: translateY(0);
+}
+
+#slideCounter {
+    font-weight: 600;
+    color: #667eea;
+    min-width: 80px;
+    text-align: center;
+    font-size: 1.1em;
+}
+
+/* ===== ІНДИКАТОРИ СЛАЙДІВ ===== */
+.slide-indicators {
+    position: fixed;
+    bottom: 130px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px 15px;
+    border-radius: 50px;
+    z-index: 99;
+}
+
+.slide-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ccc;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.slide-dot.active {
+    background-color: #667eea;
+    width: 30px;
+    border-radius: 6px;
+}
+
+.slide-dot:hover {
+    background-color: #667eea;
+}
+
+/* ===== АДАПТИВНІСТЬ ===== */
+@media (max-width: 768px) {
+    .presentation {
+        width: 95%;
+        height: auto;
+        min-height: 500px;
+    }
+
+    .slide-content {
+        padding: 40px 30px;
+    }
+
+    .slide h1 {
+        font-size: 2.5em;
+    }
+
+    .slide h2 {
+        font-size: 1.8em;
+        margin-bottom: 25px;
+    }
+
+    .comparison-block,
+    .two-column,
+    .classification-grid,
+    .requirements-grid,
+    .normative-block,
+    .conclusions {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .req-row {
+        grid-template-columns: 1fr;
+    }
+
+    .controls {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px 20px;
+        bottom: 20px;
+    }
+
+    .nav-btn {
+        padding: 8px 20px;
+        font-size: 0.9em;
+    }
+
+    #slideCounter {
+        font-size: 1em;
+    }
+
+    .slide-indicators {
+        bottom: auto;
+        top: 10px;
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 480px) {
+    .slide-content {
+        padding: 30px 15px;
+    }
+
+    .slide h1 {
+        font-size: 1.8em;
+    }
+
+    .slide h2 {
+        font-size: 1.4em;
+        margin-bottom: 20px;
+    }
+
+    .slide h3 {
+        font-size: 1.1em;
+    }
+
+    .controls {
+        width: 90%;
+        padding: 8px 10px;
+        gap: 5px;
+    }
+
+    .nav-btn {
+        padding: 6px 12px;
+        font-size: 0.8em;
+    }
+
+    #slideCounter {
+        font-size: 0.85em;
+    }
+}
