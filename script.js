@@ -152,7 +152,7 @@ window.addEventListener('keydown', function(e) {
 
 // ===== ІНФОРМАЦІЯ ДЛЯ КОРИСТУВАЧА =====
 console.log(`
-╔═════════���══════════════════════════════════════════╗
+╔════════════════════════════════════════════════════╗
 ║   Презентація "Цивільні і промислові будівлі"     ║
 ╠════════════════════════════════════════════════════╣
 ║ Всього слайдів: ${totalSlides}                                 ║
@@ -167,7 +167,7 @@ console.log(`
 ╚════════════════════════════════════════════════════╝
 `);
 
-// ===== АВТОСОХРАНЕННЯ ПРОГРЕСУ (LOCAL STORAGE) =====
+// ===== АВТОЗБЕРЕЖЕННЯ ПРОГРЕСУ (LOCAL STORAGE) =====
 function saveProgress() {
     localStorage.setItem('currentSlide', currentSlide);
     localStorage.setItem('lastVisited', new Date().toISOString());
@@ -187,4 +187,4 @@ function loadProgress() {
 window.addEventListener('beforeunload', saveProgress);
 
 // Опціонально: завантажуємо прогрес при завантаженні
-// loadProgress(); // Розкоментуйте, якщо хочете відновити посилення
+// loadProgress(); // Розкоментуйте, якщо хочете відновити прогрес
